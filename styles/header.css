@@ -1,0 +1,134 @@
+.cabecalho__menu-hamburguer{
+    width: 36px;
+    height: 24px;
+    background-image: url('../assets/Menu.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.cabecalho{
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    font-family: var(--fonte-principal);
+    font-size: 1.25rem;
+    padding: 0.5rem;
+}
+
+.lista-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: var(--branco);
+
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    z-index: 9999;
+}
+
+.lista-menu__titulo{
+    padding: 1.5rem 0 0.5rem 1.5rem;
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista-menu__item{
+    padding: 1.5rem 9.5rem 1rem 1.5rem;
+    text-transform: uppercase;
+}
+
+.lista-menu__link{
+    background: var(--gradiente-azul);
+    --webkit-background-clip: text;
+    --webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.container__botao{
+    display: none;
+}
+
+.container__botao:checked ~ .lista-menu{
+    display: block;
+}
+
+.container__titulo, .opcoes__menu, .cabecalho__icone__texto{
+    display: none;
+}
+
+@media screen and (min-width: 1024px){
+    .container__titulo, .container__titulo--negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 1.8rem;
+    }
+
+    .container__titulo{
+        font-weight: 400;
+        display: inline;
+    }
+
+    .container__titulo--negrito{
+        font-weight: 700;
+    }
+
+    .cabecalho__menu-hamburguer, .cabecalho__favoritos-icone, .opcoes__menu-botao{
+        display: none;
+    }
+
+    .opcoes__menu{
+        display: flex;
+        font-family: var(--fonte-principal);
+        font-size: 1rem;
+    }
+
+    .opcoes__menu-item{
+        padding: 0.6rem 2rem 0.6rem 0.6rem;
+        text-transform: uppercase;
+    }
+
+    .opcoes__menu-botao:checked ~ .lista-menu{
+        display: block;
+    }
+
+    .cabecalho{
+        padding: 0 5rem;
+    }
+
+    .container-icones{
+        gap: 3.75rem;
+    }
+
+    .lista-menu__item{
+        padding: 1.5rem 3.5rem 1rem 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1728px){
+    .cabecalho__icone__texto{
+        display: block;
+    }
+
+    .opcoes__menu{
+        margin-right: auto;
+    }
+
+    .opcoes__menu-item{
+        padding: 0.6rem 0rem 0.6rem 2rem;
+    }
+
+}
